@@ -20,10 +20,11 @@
         <header class="row">
           <nav>
             <div class="nav-wrapper">
+              <img src="./assets/images/Toucan.png" id="logo">
               <a href="#!" class="brand-logo">Movie Night Mania</a>
               <ul class="right hide-on-med-and-down">
-                <li><a class="waves-effect waves-light btn"><i class="material-icons right">face</i>My List</a></li>
-                <li><a class="waves-effect waves-light btn"><i class="material-icons right">build</i>Settings</a></li>
+                <li><a class="waves-effect btn"><i class="material-icons right">movie_filter</i>My List</a></li>
+                <li><a class="waves-effect btn"><i class="material-icons right">build</i>Settings</a></li>
               </ul>
             </div>
           </nav>
@@ -35,83 +36,127 @@
     
         <!-- SERVICE SECTION -->
     
-        <div col s6>
+        <div class="col s6">
+
+          <a class="waves-effect btn-large right" id="submit"><i class="material-icons right">pageview</i>Find my movie!</a>
+
+          <h4 id="serviceTitle">Service:</h4>
        
         <div class="section" id="service">
             
-            <h4>Service:</h4>
+           
     
           <serviceContainer>
     
             <optContainer class="container">
                 <label>
-                    <input type="checkbox" class="filled-in" value="203"/>
+                    <input type="checkbox" class="filled-in checkbox-color" value="203"/>
                     <span>Netflix</span>
                 </label> 
     
                 <label>
-                    <input type="checkbox" class="filled-in" value="157"/>
+                    <input type="checkbox" class="filled-in checkbox-color" value="157"/>
                     <span>Hulu</span>
                 </label> 
     
                 <label>
-                    <input type="checkbox" class="filled-in" value="387"/>
+                    <input type="checkbox" class="filled-in checkbox-color" value="387"/>
                     <span>HBO Max</span>
                 </label> 
     
                 <label>
-                    <input type="checkbox" class="filled-in" value="26"/>
+                    <input type="checkbox" class="filled-in checkbox-color" value="26"/>
                     <span>Amazon Prime</span>
                 </label> 
+
+                <label>
+                  <input type="checkbox" class="filled-in checkbox-color" value="26"/>
+                  <span>Disney+</span>
+              </label> 
+
+              <label>
+                <input type="checkbox" class="filled-in checkbox-color" value="26"/>
+                <span>YouTube</span>
+            </label> 
+
             </optContainer>
     
         </serviceContainer>
         </div>
     
         <!-- GENRE SECTION -->
-       
+        <h4>Genre:</h4>
+
         <div class="section" id="genres">
-            <h4>Genre:</h4>
+            
             
           <genreContainer>
     
             <optContainer class="container">
                 <label>
-                    <input type="checkbox" class="filled-in" value="17"/>
+                    <input type="checkbox" class="filled-in checkbox-color" value="17"/>
                     <span>Thriller</span>
                 </label> 
     
                 <label>
-                    <input type="checkbox" class="filled-in" value="1"/>
+                    <input type="checkbox" class="filled-in checkbox-color" value="1"/>
                     <span>Action</span>
                 </label> 
     
                 <label>
-                    <input type="checkbox" class="filled-in" value="4"/>
+                    <input type="checkbox" class="filled-in checkbox-color" value="4"/>
                     <span>Comedy</span>
                 </label> 
     
                 <label>
-                    <input type="checkbox" class="filled-in" value="9"/>
+                    <input type="checkbox" class="filled-in checkbox-color" value="9"/>
                     <span>Sci-Fi</span>
                 </label> 
     
                 <label>
-                    <input type="checkbox" class="filled-in" value="15"/>
+                    <input type="checkbox" class="filled-in checkbox-color" value="15"/>
                     <span>Fantasy</span>
                 </label> 
+
+                <label>
+                  <input type="checkbox" class="filled-in checkbox-color" value="33"/>
+                  <span>Anime</span>
+              </label> 
+
+              <label>
+                <input type="checkbox" class="filled-in checkbox-color" value="6"/>
+                <span>Documentary</span>
+            </label> 
+
             </optContainer>
     
         </genreContainer>
+        
         </div>
-    
-        <a class="waves-effect waves-light btn"><i class="material-icons right">check</i>Submit</a>
     
     </div>
     
     
     
     <!-- CONTAINER FOR MOVIES -->
+
+    <div class="col s6">
+
+      <div class="card">
+        <div class="card-image">
+          <img src="./assets/images/poster.jpg" id="poster">
+        </div>
+       
+        <span class="card-title" id="title">Lawrence of Arabia  <img class="right" src="./assets/images/Toucan.png" id="fav"> </span>
+        <div class="card-content">
+          <p>Lawrence of Arabia is a 1962 British epic historical drama film based on the life of T. E. Lawrence and his 1926 book Seven Pillars of Wisdom.</p>
+        </div>
+        <div class="card-action">
+          <a href="https://www.imdb.com/title/tt0056172/"  target="_blank">View IMDB Page</a>
+        </div>
+      </div>
+
+    </div>
     
     
     

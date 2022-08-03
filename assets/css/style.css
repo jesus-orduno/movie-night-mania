@@ -1,13 +1,98 @@
-#genres {
-    background-color: #85a1fd;
+:root {
+    --darkest: #040407;
+    --dark: #312f3b;
+    --red: #8d2525;
+    --yellow: #cca655;
+    --blue: #545fa8;
+}
+
+body {
+    background-color: var(--dark);
+}
+
+/* NAVBAR STYLRS */
+
+.nav-wrapper {
+    background-color: var(--darkest);
+}
+
+.btn {
+    background-color: var(--blue);
+}
+
+.btn:hover {
+    background-color: var(--red);
+}
+
+#logo {
+    max-width: 100%;
+    width: 50px;
+    margin: 5px;
+}
+
+/* OPTION SECTION STYLES */
+
+.checkbox-color[type="checkbox"].filled-in:checked+span:not(.lever):after {
+    border: 2px solid var(--red);
+    background-color: var(--red);
+  }
+
+#submit {
+    margin-top: 20px;
+    background-color: var(--blue);
+}
+
+#submit:hover {
+    background-color: var(--red);
+}
+
+#serviceTitle {
+    margin-top: 100px;
 }
 
 #service {
-    background-color: #87fd85;
+    background-color: var(--yellow);
+}
+
+#genres {
+    background-color: var(--yellow);
+}
+
+#genres, #service {
+    border-radius: 20px;
+    margin-bottom: 3vh;
+}
+
+h4 {
+    margin-left: 30px;
+    color: white;
 }
 
 span {
     color: black;
     margin: 10px;
+    margin-left: 30px;
+}
+
+/* MOVIE CARD STYLES */
+
+#fav {
+    max-width: 100%;
+    width: 50px;
+    margin: 20px;
+}
+
+/* #fav:hover {
+    
+} */
+
+#poster {
+    padding: 50px;
+}
+
+#title {
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
 }
 
