@@ -76,6 +76,15 @@ span {
 
 /* MOVIE CARD STYLES */
 
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    max-width: 100%;
+}
+
 #fav {
     max-width: 100%;
     width: 50px;
@@ -86,8 +95,15 @@ span {
     
 } */
 
+.card-image {
+    display: flex;
+    justify-content: center;
+}
+
 #poster {
-    padding: 50px;
+    padding: 20px;
+    max-width: 50%;
+    
 }
 
 #title {
