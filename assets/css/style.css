@@ -86,10 +86,13 @@ span {
     background-color: white;
 }
 
-#fav {
+.fav {
     max-width: 100%;
     width: 50px;
     margin: 20px;
+}
+.related-img{
+    cursor: pointer;
 }
 
 /* #fav:hover {
