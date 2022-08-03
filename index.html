@@ -24,7 +24,6 @@
               <a href="#!" class="brand-logo">Movie Night Mania</a>
               <ul class="right hide-on-med-and-down">
                 <li><a class="waves-effect btn"><i class="material-icons right">movie_filter</i>My List</a></li>
-                <li><a class="waves-effect btn"><i class="material-icons right">build</i>Settings</a></li>
               </ul>
             </div>
           </nav>
@@ -129,7 +128,7 @@
 
         <h4 class="recTitle">More Suggestions:</h4>
 
-        <div class="row">
+        <div id="four-cards" class="row hide">
 
           <div class="col s12 m3">
             <div class="card rel-card">
@@ -172,21 +171,24 @@
     
     <!-- CONTAINER FOR MOVIES -->
 
-    <div class="col s6 center">
+    <div id="one-card" class="col s6 center hide">
 
       <div class="card">
         <div class="card-image">
           <img src="./assets/images/poster.jpg" id="poster">
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons like-btn">add</i></a>
         </div>
-       
-        <span class="card-title" id="m-title">Lawrence of Arabia  <img class="right fav" src="./assets/images/Toucan.png"> </span>
-        <p>Starring: <span id="m-actors"></span></p>
-        <div class="card-content">
-          
-          <p id="m-plot">Lawrence of Arabia is a 1962 British epic historical drama film based on the life of T. E. Lawrence and his 1926 book Seven Pillars of Wisdom.</p>
-        </div>
-        <div class="card-action">
-          <a id="linktoIMDb" href="https://www.imdb.com/title/tt0056172/"  target="_blank">View IMDB Page</a>
+        <div class="content-wrapper">
+          <h1 class="card-title" id="m-title">Lawrence of Arabia  <img class="right fav" src="./assets/images/Toucan.png"> </h1>
+          <p><strong>Starring:</strong><span id="m-actors"></span></p>
+          <div class="card-content">
+            
+            <p id="m-plot">Lawrence of Arabia is a 1962 British epic historical drama film based on the life of T. E. Lawrence and his 1926 book Seven Pillars of Wisdom.</p>
+          </div>
+          <div class="card-action cust-flex ">
+            <a id="linktoIMDb" href="https://www.imdb.com/title/tt0056172/"  target="_blank">View IMDB Page</a>
+            <p>IMDb rating: <span id="im-rating"></span></p>
+          </div>
         </div>
       </div>
 
