@@ -50,27 +50,27 @@
     
             <optContainer class="container">
                 <label>
-                    <input type="checkbox" class="filled-in checkbox-color" value="203"/>
+                    <input type="checkbox" class="filled-in stream-choices checkbox-color" value="203"/>
                     <span>Netflix</span>
                 </label> 
     
                 <label>
-                    <input type="checkbox" class="filled-in checkbox-color" value="157"/>
+                    <input type="checkbox" class="filled-in stream-choices checkbox-color" value="157"/>
                     <span>Hulu</span>
                 </label> 
     
                 <label>
-                    <input type="checkbox" class="filled-in checkbox-color" value="387"/>
+                    <input type="checkbox" class="filled-in stream-choices checkbox-color" value="387"/>
                     <span>HBO Max</span>
                 </label> 
     
                 <label>
-                    <input type="checkbox" class="filled-in checkbox-color" value="26"/>
+                    <input type="checkbox" class="filled-in stream-choices checkbox-color" value="26"/>
                     <span>Amazon Prime</span>
                 </label> 
 
               <label>
-                <input type="checkbox" class="filled-in checkbox-color" value="26"/>
+                <input type="checkbox" class="filled-in stream-choices checkbox-color" value="344"/>
                 <span>YouTube</span>
             </label> 
 
@@ -89,37 +89,37 @@
     
             <optContainer class="container">
                 <label>
-                    <input type="checkbox" class="filled-in checkbox-color" value="17"/>
+                    <input type="checkbox" class="filled-in genre-choices checkbox-color" value="17"/>
                     <span>Thriller</span>
                 </label> 
     
                 <label>
-                    <input type="checkbox" class="filled-in checkbox-color" value="1"/>
+                    <input type="checkbox" class="filled-in genre-choices checkbox-color" value="1"/>
                     <span>Action</span>
                 </label> 
     
                 <label>
-                    <input type="checkbox" class="filled-in checkbox-color" value="4"/>
+                    <input type="checkbox" class="filled-in genre-choices checkbox-color" value="4"/>
                     <span>Comedy</span>
                 </label> 
     
                 <label>
-                    <input type="checkbox" class="filled-in checkbox-color" value="9"/>
+                    <input type="checkbox" class="filled-in genre-choices checkbox-color" value="9"/>
                     <span>Sci-Fi</span>
                 </label> 
     
                 <label>
-                    <input type="checkbox" class="filled-in checkbox-color" value="15"/>
+                    <input type="checkbox" class="filled-in genre-choices checkbox-color" value="15"/>
                     <span>Fantasy</span>
                 </label> 
 
                 <label>
-                  <input type="checkbox" class="filled-in checkbox-color" value="33"/>
+                  <input type="checkbox" class="filled-in genre-choices checkbox-color" value="33"/>
                   <span>Anime</span>
               </label> 
 
               <label>
-                <input type="checkbox" class="filled-in checkbox-color" value="6"/>
+                <input type="checkbox" class="filled-in genre-choices checkbox-color" value="6"/>
                 <span>Documentary</span>
             </label> 
 
@@ -138,7 +138,7 @@
           <div class="col s12 m3">
             <div class="card rel-card">
               <div class="card-image">
-                <img src="./assets/images/poster.jpg">
+                <img class="related-img" src="./assets/images/poster.jpg">
               </div>
             </div>
           </div>
@@ -146,7 +146,7 @@
           <div class="col s12 m3">
             <div class="card rel-card">
               <div class="card-image">
-                <img src="./assets/images/poster.jpg">
+                <img class="related-img" src="./assets/images/poster.jpg">
               </div>
             </div>
           </div>
@@ -154,7 +154,7 @@
           <div class="col s12 m3">
             <div class="card rel-card">
               <div class="card-image">
-                <img src="./assets/images/poster.jpg">
+                <img class="related-img" src="./assets/images/poster.jpg">
               </div>
             </div>
           </div>
@@ -162,7 +162,7 @@
           <div class="col s12 m3">
             <div class="card rel-card">
               <div class="card-image">
-                <img src="./assets/images/poster.jpg">
+                <img class="related-img" src="./assets/images/poster.jpg">
               </div>
             </div>
           </div>
@@ -183,12 +183,14 @@
           <img src="./assets/images/poster.jpg" id="poster">
         </div>
        
-        <span class="card-title" id="title">Lawrence of Arabia  <img class="right" src="./assets/images/Toucan.png" id="fav"> </span>
+        <span class="card-title" id="m-title">Lawrence of Arabia  <img class="right" src="./assets/images/Toucan.png" id="fav"> </span>
+        <p>Starring: <span id="m-actors"></span></p>
         <div class="card-content">
-          <p>Lawrence of Arabia is a 1962 British epic historical drama film based on the life of T. E. Lawrence and his 1926 book Seven Pillars of Wisdom.</p>
+          
+          <p id="m-plot">Lawrence of Arabia is a 1962 British epic historical drama film based on the life of T. E. Lawrence and his 1926 book Seven Pillars of Wisdom.</p>
         </div>
         <div class="card-action">
-          <a href="https://www.imdb.com/title/tt0056172/"  target="_blank">View IMDB Page</a>
+          <a id="linktoIMDb" href="https://www.imdb.com/title/tt0056172/"  target="_blank">View IMDB Page</a>
         </div>
       </div>
 
@@ -206,5 +208,7 @@
   <!-- The above script doesn't seem to work with the built in button animations? -->
   <!-- The script below works with them -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
