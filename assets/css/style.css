@@ -98,6 +98,7 @@ span {
 .card-image {
     display: flex;
     justify-content: center;
+    background-color: var(--darkest);
 }
 
 #poster {
@@ -106,9 +107,14 @@ span {
     
 }
 
+.card {
+    background-color: white;
+}
+
 #title {
     color: black;
     font-size: 30px;
     font-weight: bold;
+    background-color: white;
 }
 
