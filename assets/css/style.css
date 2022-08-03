@@ -95,11 +95,10 @@ span {
 }
 #m-plot{
     text-align: left;
-    background-color: black;
+    border:1px solid black;
     border-radius: 5px;
-    color:white;
     padding:5px;
-    box-shadow: 3px 3px 3px 3px black;
+    box-shadow: 1px 1px 1px 1px black;
 }
 
 /* MOVIE CARD STYLES */
