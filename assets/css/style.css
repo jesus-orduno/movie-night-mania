@@ -8,6 +8,41 @@
 
 body {
     background-color: var(--dark);
+    margin: 0;
+}
+
+/* Parallax Styles */
+
+.wrapper {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 10px;
+}
+
+.parallax {
+    position: relative;
+    height: 100%;
+    transform-style: preserve-3d;
+    z-index: -1;
+}
+
+.mg, .fg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.mg {
+    transform: translateZ(-10px) scale(2);
+    pointer-events: none;
+}
+
+.fg {
+    transform: translateZ(-5px) scale(1.5);
+    pointer-events: none;
 }
 
 /* NAVBAR STYLRS */
@@ -122,5 +157,32 @@ span {
 
 .recTitle {
     margin-top: 40px;
+}
+
+/* FOOTER */
+
+footer {
+    margin-top: 100px;
+    padding-bottom: 10px;
+}
+
+.page-footer {
+    background: linear-gradient(var(--darkest), var(--dark));
+}
+
+h5 {
+    padding-top: 40px;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.paragraph {
+    font-size: 15px;
+    line-height: 2em;
+}
+
+.contributors{
+    line-height: 3em;
+    font-size: 15px;
 }
 
