@@ -60,6 +60,7 @@ function imdbCall(imbdID){
     titleEl.text(response.fullTitle);
     actorsEl.text(response.stars);
     plotEl.text(response.plot);
+    $("#im-rating").text(response.imDbRating);
     imDbLink.attr("href", "https://www.imdb.com/title/" + response.id);
     
     var storeSimilar = [];
@@ -76,6 +77,8 @@ function imdbCall(imbdID){
     
     console.log(response);
 })
+    $("#one-card").removeClass("hide");
+    $("#four-cards").removeClass("hide");
 }
 
 function relatedClickHandle (event){
