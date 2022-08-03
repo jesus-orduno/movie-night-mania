@@ -83,6 +83,7 @@ span {
 
 .card {
     max-width: 100%;
+    background-color: white;
 }
 
 #fav {
@@ -107,13 +108,16 @@ span {
     
 }
 
-.card {
-    background-color: white;
-}
-
 #title {
     color: black;
     font-size: 30px;
     font-weight: bold;
     background-color: white;
 }
+
+/* More Movies */
+
+.recTitle {
+    margin-top: 40px;
+}
+
