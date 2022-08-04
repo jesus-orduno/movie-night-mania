@@ -49,6 +49,9 @@ body {
 
 .nav-wrapper {
     background-color: var(--darkest);
+    background-image: url("../images/banner.jpg");
+    background-size: cover;
+    padding-bottom: 80px;
 }
 
 .btn {
@@ -87,10 +90,14 @@ body {
 
 #service {
     background-color: var(--yellow);
+    background-image: url("../images/stars2.jpg");
+    background-size: cover;
 }
 
 #genres {
     background-color: var(--yellow);
+    background-image: url("../images/stars.jpg");
+    background-size: cover;
 }
 
 #genres, #service {
