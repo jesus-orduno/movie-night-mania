@@ -6,10 +6,12 @@ var imDbLink = $("#linktoIMDb");
 var streamChoices = $(".stream-choices");
 var genreChoices = $(".genre-choices");
 var relatedImgEl = $(".related-img");
-var saveTitleBtn = $(".fav");
+var saveTitleBtn = $(".like-btn");
 var submitBtn = $("#submit");
 
 function randomTitle(){
+    posterEl.attr("src", "assets/images/loading.gif");
+    relatedImgEl.attr("src", "assets/images/loading.gif");
     let titleList = "https://api.watchmode.com/v1/list-titles/?apiKey=dbCx7YRbc5pgx6Kaf7ntaEMkFmmK0V69gHEbLFZc&types=movie";
     let storeStreamValues = [];
     for(i = 0;i < streamChoices.length;i++){
@@ -82,6 +84,8 @@ function imdbCall(imbdID){
 }
 
 function relatedClickHandle (event){
+    posterEl.attr("src", "assets/images/loading.gif");
+    relatedImgEl.attr("src", "assets/images/loading.gif");
     var event = event.target;
     imdbCall(event.id);
 }
