@@ -73,8 +73,15 @@ body {
 
 #logo {
     max-width: 100%;
-    width: 50px;
+    width: 80px;
     margin: 5px;
+    padding-left: 10px;
+}
+
+.app-title {
+    padding-top: 15px;
+    padding-left: 10px;
+    font-weight: bold;
 }
 
 /* OPTION SECTION STYLES */
