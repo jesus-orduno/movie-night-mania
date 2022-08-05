@@ -84,9 +84,6 @@ body {
     background-color: var(--red);
 }
 
-#serviceTitle {
-    margin-top: 100px;
-}
 
 #service {
     background-color: var(--yellow);
@@ -123,8 +120,7 @@ span {
 }
 .cust-flex{
     display: flex;
-    align-items:center;
-    line-height: 1px;
+    flex-direction: column;
     
 }
 
@@ -219,4 +215,17 @@ h5 {
     line-height: 3em;
     font-size: 15px;
 }
+#four-cards{
+    padding: 10% 0;
+}
 
+#four-cards h4{
+    width:100%;
+    text-align: center;
+    
+}
+.related-sec-title{
+    margin:0 auto;
+    border-bottom:1px solid white;
+    width:70%;
+}
