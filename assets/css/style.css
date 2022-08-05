@@ -124,17 +124,21 @@ span {
     margin: 10px;
     margin-left: 30px;
 }
+
 #m-actors{
     padding:0;
 }
+
 .hide{
     display: none;
 }
+
 .cust-flex{
     display: flex;
     align-items: center;
     
 }
+
 .app-title{
     font-size: 2em;
     position: absolute;
@@ -142,6 +146,7 @@ span {
     bottom:0;
     cursor: context-menu;
 }
+
 .content-wrapper{
     display: flex;
     flex-direction: column;
@@ -149,6 +154,7 @@ span {
     justify-content: center;
     margin:2%;
 }
+
 #m-plot{
     text-align: left;
     border:1px solid black;
@@ -177,6 +183,14 @@ span {
 }
 .related-img{
     cursor: pointer;
+}
+
+.saved-img{
+    cursor: pointer;
+}
+
+.saved-img:hover{
+    opacity: 0.7;
 }
 
 .related-img:hover{
@@ -254,10 +268,26 @@ h5 {
     text-align: center;
     
 }
+
+.saved-card {
+    margin-top: 20px;
+}
+
 .related-sec-title{
     margin:0 auto;
     border-bottom:1px solid white;
     width:70%;
+}
+
+.saved-sec-title{
+    margin:0 auto;
+    border-bottom:1px solid white;
+    width:70%;
+}
+
+.saved-title {
+    text-align: center;
+    margin-top: 40px;
 }
 
 /* MOBILE */
