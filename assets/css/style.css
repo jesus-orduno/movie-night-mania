@@ -119,19 +119,22 @@ h4 {
     color: white;
 }
 
-span {
+.selections {
     color: black;
     margin: 10px;
     margin-left: 30px;
+}
+.add-star::before{
+    content: "⭐"
 }
 
 #m-actors{
     padding:0;
 }
 
-.hide{
+/* .hide{
     display: none;
-}
+} */
 
 .cust-flex{
     display: flex;
@@ -157,10 +160,19 @@ span {
 
 #m-plot{
     text-align: left;
-    border:1px solid black;
-    border-radius: 5px;
     padding:5px;
-    box-shadow: 1px 1px 1px 1px black;
+    
+}
+.content-wrapper{
+    border: 1px solid black;
+    box-shadow: 0 0 5px #7e7d7e;
+}
+.title-wrap{
+    border-bottom: 1px solid black;
+    width:90%;
+}
+strong{
+    font-weight: bold;
 }
 
 /* MOVIE CARD STYLES */
@@ -183,6 +195,8 @@ span {
 }
 .related-img{
     cursor: pointer;
+    margin: 1% auto;
+    width:100%;
 }
 
 .saved-img{
@@ -213,8 +227,7 @@ span {
 }
 
 #poster {
-    padding: 20px;
-    max-width: 50%;
+    width: 60%;
     
 }
 
@@ -260,7 +273,17 @@ h5 {
 
 /*  */
 #four-cards{
-    padding: 10% 0;
+    width:50%;
+    position: absolute;
+    bottom:10px;
+    left:10px;
+    
+}
+#one-card{
+    height:50%;
+}
+.select-wrap{
+    width:50%;
 }
 
 #four-cards h4{
@@ -289,12 +312,47 @@ h5 {
     text-align: center;
     margin-top: 40px;
 }
+.flex-head{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    
+}
+
 
 /* MOBILE */
 
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 992px){
+    
+    #four-cards{
+        position: relative;
+        width: 100%;
+        padding-top:10%;
+    }
+    .flex-head{
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height:auto;
+    }
+    #one-card{
+        padding-top:5%;
+        margin:auto;
+    }
+    .select-wrap{
+        width:80%;
+    }
+}
+
+@media screen and (max-width: 768px) {
     /* For mobile phones: */
+
+    
   
+    #four-cards{
+        width:100%;
+        margin: 0 auto;
+    }
     .nav-wrapper a{
        font-size: 20px;
     }
