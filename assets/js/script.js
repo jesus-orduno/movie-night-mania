@@ -8,8 +8,11 @@ var genreChoices = $(".genre-choices");
 var relatedImgEl = $(".related-img");
 var saveTitleBtn = $(".like-btn");
 var submitBtn = $("#submit");
+var storeSavedTitles = [];
+
 
 function randomTitle(){
+    saveTitleBtn.css("background-color", "#545fa8");
     posterEl.attr("src", "assets/images/loading.gif");
     relatedImgEl.attr("src", "assets/images/loading.gif");
     let titleList = "https://api.watchmode.com/v1/list-titles/?apiKey=dbCx7YRbc5pgx6Kaf7ntaEMkFmmK0V69gHEbLFZc&types=movie";
@@ -84,12 +87,36 @@ function imdbCall(imbdID){
 }
 
 function relatedClickHandle (event){
+    saveTitleBtn.css("background-color", "#545fa8");
     posterEl.attr("src", "assets/images/loading.gif");
     relatedImgEl.attr("src", "assets/images/loading.gif");
     var event = event.target;
     imdbCall(event.id);
 }
 
+function restoreSaved(){
+    var storage = JSON.parse(localStorage.getItem("titles"));
+    if(storage != null){
+       for(i = 0;i < storage.length;i++){
+            storeSavedTitles.push(storage[i]);
+       }
+    } 
+}
+
+restoreSaved();
+
+function saveTitle(event){
+    var event = event.target;
+    saveTitleBtn.css("background-color", "#8d2525");
+    storeSavedTitles.push(event.id);
+    if(storeSavedTitles != null){
+        localStorage.setItem("titles", JSON.stringify(storeSavedTitles));
+    }
+
+
+}
+
 
 submitBtn.on("click", randomTitle)
 relatedImgEl.on("click", relatedClickHandle);
+saveTitleBtn.on("click", saveTitle);

@@ -132,10 +132,16 @@ span {
 }
 .cust-flex{
     display: flex;
-    flex-direction: column;
+    align-items: center;
     
 }
-
+.app-title{
+    font-size: 2em;
+    position: absolute;
+    top:0;
+    bottom:0;
+    cursor: context-menu;
+}
 .content-wrapper{
     display: flex;
     flex-direction: column;
