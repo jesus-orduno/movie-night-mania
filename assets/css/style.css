@@ -1,5 +1,6 @@
 :root {
     --darkest: #040407;
+    --darker: #1e1d25;
     --dark: #312f3b;
     --red: #8d2525;
     --yellow: #cca655;
@@ -7,8 +8,9 @@
 }
 
 body {
-    background-color: var(--dark);
+    background-color: var(--darker);
     margin: 0;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 /* Parallax Styles */
@@ -38,11 +40,13 @@ body {
 .mg {
     transform: translateZ(-10px) scale(2);
     pointer-events: none;
+    opacity: 0.3;
 }
 
 .fg {
     transform: translateZ(-5px) scale(1.5);
     pointer-events: none;
+    opacity: 0.5;
 }
 
 /* NAVBAR STYLRS */
@@ -56,6 +60,11 @@ body {
 
 .btn {
     background-color: var(--blue);
+    border-radius: 5px;
+}
+
+.brand-logo {
+    font-weight: bold;
 }
 
 .btn:hover {
@@ -78,6 +87,7 @@ body {
 #submit {
     margin-top: 20px;
     background-color: var(--blue);
+    border-radius: 5px;
 }
 
 #submit:hover {
@@ -89,16 +99,18 @@ body {
     background-color: var(--yellow);
     background-image: url("../images/stars2.jpg");
     background-size: cover;
+    box-shadow: 0px 0px 20px var(--darkest);
 }
 
 #genres {
     background-color: var(--yellow);
     background-image: url("../images/stars.jpg");
     background-size: cover;
+    box-shadow: 0px 0px 20px var(--darkest);
 }
 
 #genres, #service {
-    border-radius: 20px;
+    border-radius: 5px;
     margin-bottom: 3vh;
 }
 
@@ -149,6 +161,7 @@ span {
 .card {
     max-width: 100%;
     background-color: white;
+    border-radius: 5px;
 }
 
 .fav {
@@ -160,14 +173,23 @@ span {
     cursor: pointer;
 }
 
-/* #fav:hover {
-    
-} */
+.related-img:hover{
+    opacity: 0.7;
+}
+
+.addBtn {
+    background-color: var(--blue);
+}
+
+.addBtn:hover {
+    background-color: var(--red);
+}
 
 .card-image {
     display: flex;
     justify-content: center;
     background-color: var(--darkest);
+    border-radius: 5px;
 }
 
 #poster {
