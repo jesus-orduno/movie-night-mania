@@ -5,297 +5,323 @@
     --red: #8d2525;
     --yellow: #cca655;
     --blue: #545fa8;
-}
-
-body {
+  }
+  
+  body {
     background-color: var(--darker);
     margin: 0;
     font-family: 'Ubuntu', sans-serif;
-}
-
-/* Parallax Styles */
-
-.wrapper {
+  }
+  
+  /* Parallax Styles */
+  
+  .wrapper {
     height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
     perspective: 10px;
-}
-
-.parallax {
+  }
+  
+  .parallax {
     position: relative;
     height: 100%;
     transform-style: preserve-3d;
     z-index: -1;
-}
-
-.mg, .fg {
+  }
+  
+  .mg, .fg {
     position: absolute;
     height: 100%;
     width: 100%;
     object-fit: cover;
     z-index: -1;
-}
-
-.mg {
+  }
+  
+  .mg {
     transform: translateZ(-10px) scale(2);
     pointer-events: none;
     opacity: 0.3;
-}
-
-.fg {
+  }
+  
+  .fg {
     transform: translateZ(-5px) scale(1.5);
     pointer-events: none;
     opacity: 0.5;
-}
-
-/* NAVBAR STYLRS */
-
-.nav-wrapper {
+  }
+  
+  /* NAVBAR STYLRS */
+  
+  .nav-wrapper {
     background-color: var(--darkest);
     background-image: url("../images/banner.jpg");
     background-size: cover;
     padding-bottom: 80px;
-}
-
-.btn {
+  }
+  
+  .btn {
     background-color: var(--blue);
     border-radius: 5px;
-}
-
-.brand-logo {
+  }
+  
+  .brand-logo {
     font-weight: bold;
-}
-
-.btn:hover {
+  }
+  
+  .btn:hover {
     background-color: var(--red);
-}
-
-#logo {
+  }
+  
+  #logo {
     max-width: 100%;
     width: 50px;
     margin: 5px;
-}
-
-/* OPTION SECTION STYLES */
-
-.checkbox-color[type="checkbox"].filled-in:checked+span:not(.lever):after {
+  }
+  
+  /* OPTION SECTION STYLES */
+  
+  .checkbox-color[type="checkbox"].filled-in:checked+span:not(.lever):after {
     border: 2px solid var(--red);
     background-color: var(--red);
   }
-
-#submit {
+  
+  #submit {
     margin-top: 20px;
     background-color: var(--blue);
     border-radius: 5px;
-}
-
-#submit:hover {
+  }
+  
+  #submit:hover {
     background-color: var(--red);
-}
-
-
-#service {
+  }
+  
+  
+  #service {
     background-color: var(--yellow);
     background-image: url("../images/stars2.jpg");
     background-size: cover;
     box-shadow: 0px 0px 20px var(--darkest);
-}
-
-#genres {
+  }
+  
+  #genres {
     background-color: var(--yellow);
     background-image: url("../images/stars.jpg");
     background-size: cover;
     box-shadow: 0px 0px 20px var(--darkest);
-}
-
-#genres, #service {
+  }
+  
+  #genres, #service {
     border-radius: 5px;
     margin-bottom: 3vh;
-}
-
-h4 {
+  }
+  
+  h4 {
     margin-left: 30px;
     color: white;
-}
-
-span {
+  }
+  
+  span {
     color: black;
     margin: 10px;
     margin-left: 30px;
-}
-#m-actors{
+  }
+  #m-actors{
     padding:0;
-}
-.hide{
+  }
+  .hide{
     display: none;
-}
-.cust-flex{
+  }
+  .cust-flex{
     display: flex;
     align-items: center;
     
-}
-.app-title{
+  }
+  .app-title{
     font-size: 2em;
     position: absolute;
     top:0;
     bottom:0;
     cursor: context-menu;
-}
-.content-wrapper{
+  }
+  .content-wrapper{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin:2%;
-}
-#m-plot{
+  }
+  #m-plot{
     text-align: left;
     border:1px solid black;
     border-radius: 5px;
     padding:5px;
     box-shadow: 1px 1px 1px 1px black;
-}
-
-/* MOVIE CARD STYLES */
-
-.center {
+  }
+  
+  /* MOVIE CARD STYLES */
+  
+  .center {
     display: flex;
     justify-content: center;
-}
-
-.card {
+  }
+  
+  .card {
     max-width: 100%;
     background-color: white;
     border-radius: 5px;
-}
-
-.fav {
+  }
+  
+  .fav {
     max-width: 100%;
     width: 50px;
     margin: 20px;
-}
-.related-img{
+  }
+  .related-img{
     cursor: pointer;
-}
-
-.related-img:hover{
+  }
+  
+  .related-img:hover{
     opacity: 0.7;
-}
-
-.addBtn {
+  }
+  
+  .saved-img{
+    cursor: pointer;
+  }
+  
+  .saved-img:hover{
+    opacity: 0.7;
+  }
+  
+  .addBtn {
     background-color: var(--blue);
-}
-
-.addBtn:hover {
+  }
+  
+  .addBtn:hover {
     background-color: var(--red);
-}
-
-.card-image {
+  }
+  
+  .card-image {
     display: flex;
     justify-content: center;
     background-color: var(--darkest);
     border-radius: 5px;
-}
-
-#poster {
+  }
+  
+  #poster {
     padding: 20px;
     max-width: 50%;
     
-}
-
-#m-title {
+  }
+  
+  #m-title {
     color: black;
     font-size: 30px;
     font-weight: bold;
     background-color: white;
-}
-
-/* More Movies */
-
-.recTitle {
+  }
+  
+  /* More Movies */
+  
+  .recTitle {
     margin-top: 40px;
-}
-
-/* FOOTER */
-
-footer {
+  }
+  
+  /* FOOTER */
+  
+  footer {
     margin-top: 100px;
     padding-bottom: 10px;
-}
-
-.page-footer {
+  }
+  
+  .page-footer {
     background: linear-gradient(var(--darkest), var(--dark));
-}
-
-h5 {
+  }
+  
+  h5 {
     padding-top: 40px;
     font-size: 30px;
     margin-bottom: 30px;
-}
-
-.paragraph {
+  }
+  
+  .paragraph {
     font-size: 15px;
     line-height: 2em;
-}
-
-.contributors{
+  }
+  
+  .contributors{
     line-height: 3em;
     font-size: 15px;
-}
-
-/*  */
-#four-cards{
+  }
+  
+  /*  */
+  #four-cards{
     padding: 10% 0;
-}
-
-#four-cards h4{
+  }
+  
+  #four-cards h4{
     width:100%;
     text-align: center;
     
-}
-.related-sec-title{
+  }
+  
+  .saved-card {
+    margin-top: 20px;
+  }
+  
+  .related-sec-title{
     margin:0 auto;
     border-bottom:1px solid white;
     width:70%;
-}
-
-/* MOBILE */
-
-@media only screen and (max-width: 768px) {
+  }
+  
+  
+  .saved-sec-title{
+    margin:0 auto;
+    border-bottom:1px solid white;
+    width:70%;
+  }
+  
+  .saved-title {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  /* MOBILE */
+  
+  @media only screen and (max-width: 768px) {
     /* For mobile phones: */
   
     .nav-wrapper a{
        font-size: 20px;
     }
-
+  
     #poster {
         padding: 20px;
         max-width: 100%;  
     }
-
+  
     #m-title {
         color: black;
         font-size: 20px;
         font-weight: bold;
         background-color: white;
     }
-
+  
     .recTitle {
         margin-top: 80px;
         padding-right: 100px;
         font-size: 20px;
     }
-
+  
     #submit {
         margin-top: 20px;
         background-color: var(--blue);
         border-radius: 5px;
         font-size: 18px;
     }
-
+  
     .listbtn {
         max-width: 50px;
     }
-
+  
   }
+  
