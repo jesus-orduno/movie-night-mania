@@ -9,6 +9,7 @@ var relatedImgEl = $(".related-img");
 var saveTitleBtn = $(".like-btn");
 var submitBtn = $("#submit");
 var storeSavedTitles = [];
+var savedImgEl = $(".saved-img");
 
 
 function randomTitle(){
@@ -98,6 +99,7 @@ function restoreSaved(){
     var storage = JSON.parse(localStorage.getItem("titles"));
     if(storage != null){
        for(i = 0;i < storage.length;i++){
+            displayLiked(storage[i]);
             storeSavedTitles.push(storage[i]);
        }
     } 
@@ -113,6 +115,30 @@ function saveTitle(event){
         localStorage.setItem("titles", JSON.stringify(storeSavedTitles));
     }
 
+
+}
+
+function displayLiked(titleID){
+    var recentApiCall = "https://imdb-api.com/en/API/Title/k_vqj51s28/" + titleID;
+    $.ajax({
+        url: recentApiCall,
+        method: 'GET'
+    }).then(function(response){
+        var container = $("<div>");
+        container.addClass("col s12 m3");
+        var cardDivEl = $("<div>");
+        cardDivEl.addClass("card saved-card");
+        var imgDivEl = $("<div>");
+        imgDivEl.addClass("card-image");
+        var imgEl = $("<img>");
+        imgEl.addClass("saved-img");
+        imgEl.attr("src", "./assets/images/loading.gif")
+        imgDivEl.append(imgEl);
+        cardDivEl.append(imgDivEl);
+        container.append(cardDivEl);
+        $("#saved-cards").append(container);
+        imgEl.attr("src", response.image);
+    })
 
 }
 
