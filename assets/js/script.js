@@ -14,8 +14,8 @@ var savedImgEl = $(".saved-img");
 
 function randomTitle(){
     saveTitleBtn.css("background-color", "#545fa8");
-    posterEl.attr("src", "assets/images/loading.gif");
-    relatedImgEl.attr("src", "assets/images/loading.gif");
+    posterEl.attr("src", "assets/images/Loading.gif");
+    relatedImgEl.attr("src", "assets/images/Loading.gif");
     let titleList = "https://api.watchmode.com/v1/list-titles/?apiKey=dbCx7YRbc5pgx6Kaf7ntaEMkFmmK0V69gHEbLFZc&types=movie";
     let storeStreamValues = ["203", "157", "387", "26"];
     for(i = 0;i < streamChoices.length;i++){
@@ -88,8 +88,8 @@ function imdbCall(imbdID){
 
 function relatedClickHandle (event){
     saveTitleBtn.css("background-color", "#545fa8");
-    posterEl.attr("src", "assets/images/loading.gif");
-    relatedImgEl.attr("src", "assets/images/loading.gif");
+    posterEl.attr("src", "assets/images/Loading.gif");
+    relatedImgEl.attr("src", "assets/images/Loading.gif");
     var event = event.target;
     imdbCall(event.id);
 }
@@ -107,6 +107,7 @@ function restoreSaved(){
 restoreSaved();
 
 function saveTitle(event){
+
     var event = event.target;
     saveTitleBtn.css("background-color", "#8d2525");
     storeSavedTitles.push(event.id);
@@ -131,7 +132,7 @@ function displayLiked(titleID){
         cardImgEl.addClass("card-image waves-effect waves-block waves-light");
         var imgEl = $("<img>");
         imgEl.addClass("saved-img");
-        imgEl.attr("src", "./assets/images/loading.gif")
+        imgEl.attr("src", "./assets/images/Loading.gif")
 
         var btnEl = $("<a>");
         btnEl.addClass("waves-effect waves-light btn deleteBtn");

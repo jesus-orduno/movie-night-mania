@@ -82,6 +82,14 @@ body {
     padding-top: 5px;
 }
 
+.app-title:hover {
+    cursor: pointer;
+}
+
+#logo:hover{
+    cursor: pointer;
+}
+
 /* OPTION SECTION STYLES */
 
 .checkbox-color[type="checkbox"].filled-in:checked+span:not(.lever):after {
