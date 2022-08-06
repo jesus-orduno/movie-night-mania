@@ -17,17 +17,16 @@ function randomTitle(){
     posterEl.attr("src", "assets/images/loading.gif");
     relatedImgEl.attr("src", "assets/images/loading.gif");
     let titleList = "https://api.watchmode.com/v1/list-titles/?apiKey=dbCx7YRbc5pgx6Kaf7ntaEMkFmmK0V69gHEbLFZc&types=movie";
-    let storeStreamValues = [];
+    let storeStreamValues = ["203", "157", "387", "26"];
     for(i = 0;i < streamChoices.length;i++){
         if($(streamChoices[i]).prop("checked")){
-            storeStreamValues.push($(streamChoices[i]).val());
-        }
-        
+            storeStreamValues = storeStreamValues.filter((item) => {
+                return item == $(streamChoices[i]).val()
+            })
+        }  
     }
-    if(storeStreamValues != 0){
-        titleList = titleList + "&source_ids=" + storeStreamValues.join(",");
-    }
-
+    titleList = titleList + "&source_ids=" + storeStreamValues.join(",");
+    
     let storeGenreValues = [];
     for(i = 0;i < genreChoices.length;i++){
         if($(genreChoices[i]).prop("checked")){
