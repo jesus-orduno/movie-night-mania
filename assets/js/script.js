@@ -8,7 +8,7 @@ var genreChoices = $(".genre-choices");
 var relatedImgEl = $(".related-img");
 var saveTitleBtn = $(".like-btn");
 var submitBtn = $("#submit");
-var storeSavedTitles = [];
+let storeSavedTitles = [];
 var savedImgEl = $(".saved-img");
 
 
@@ -124,22 +124,6 @@ function displayLiked(titleID){
         url: recentApiCall,
         method: 'GET'
     }).then(function(response){
-        // var container = $("<div>");
-        // container.addClass("col s12 m3");
-        // var cardDivEl = $("<div>");
-        // cardDivEl.addClass("card saved-card");
-        // var imgDivEl = $("<div>");
-        // imgDivEl.addClass("card-image");
-        // var imgEl = $("<img>");
-        // imgEl.addClass("saved-img");
-        // imgEl.attr("src", "./assets/images/loading.gif")
-        
-        // imgDivEl.append(imgEl);
-        // cardDivEl.append(imgDivEl);
-        // container.append(cardDivEl);
-        // $("#saved-cards").append(container);
-        // imgEl.attr("src", response.image);
-        
         var container = $("<div>");
         container.addClass("col s12 m3");
         var cardDivEl = $("<div>");
@@ -152,6 +136,7 @@ function displayLiked(titleID){
 
         var btnEl = $("<a>");
         btnEl.addClass("waves-effect waves-light btn deleteBtn");
+        btnEl.attr("id", response.id);
         var deleteText = document.createTextNode("Remove");
 
         var closeEl = $("<i>");
@@ -171,7 +156,17 @@ function displayLiked(titleID){
 
 }
 
+function removeTitle(event){
+    var event = event.target
+    storeSavedTitles = storeSavedTitles.filter((item) => {
+        return item != event.id
+    })
+    localStorage.setItem("titles", JSON.stringify(storeSavedTitles));
+    location.reload();
+}
+
 
 submitBtn.on("click", randomTitle)
 relatedImgEl.on("click", relatedClickHandle);
 saveTitleBtn.on("click", saveTitle);
+$("#saved-cards").on("click", removeTitle);
