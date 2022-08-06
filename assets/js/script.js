@@ -124,22 +124,6 @@ function displayLiked(titleID){
         url: recentApiCall,
         method: 'GET'
     }).then(function(response){
-        // var container = $("<div>");
-        // container.addClass("col s12 m3");
-        // var cardDivEl = $("<div>");
-        // cardDivEl.addClass("card saved-card");
-        // var imgDivEl = $("<div>");
-        // imgDivEl.addClass("card-image");
-        // var imgEl = $("<img>");
-        // imgEl.addClass("saved-img");
-        // imgEl.attr("src", "./assets/images/loading.gif")
-        
-        // imgDivEl.append(imgEl);
-        // cardDivEl.append(imgDivEl);
-        // container.append(cardDivEl);
-        // $("#saved-cards").append(container);
-        // imgEl.attr("src", response.image);
-        
         var container = $("<div>");
         container.addClass("col s12 m3");
         var cardDivEl = $("<div>");
