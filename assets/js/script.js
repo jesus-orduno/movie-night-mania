@@ -8,7 +8,7 @@ var genreChoices = $(".genre-choices");
 var relatedImgEl = $(".related-img");
 var saveTitleBtn = $(".like-btn");
 var submitBtn = $("#submit");
-var storeSavedTitles = [];
+let storeSavedTitles = [];
 var savedImgEl = $(".saved-img");
 
 
@@ -152,6 +152,7 @@ function displayLiked(titleID){
 
         var btnEl = $("<a>");
         btnEl.addClass("waves-effect waves-light btn deleteBtn");
+        btnEl.attr("id", response.id);
         var deleteText = document.createTextNode("Remove");
 
         var closeEl = $("<i>");
@@ -171,7 +172,17 @@ function displayLiked(titleID){
 
 }
 
+function removeTitle(event){
+    var event = event.target
+    storeSavedTitles = storeSavedTitles.filter((item) => {
+        return item != event.id
+    })
+    localStorage.setItem("titles", JSON.stringify(storeSavedTitles));
+    location.reload();
+}
+
 
 submitBtn.on("click", randomTitle)
 relatedImgEl.on("click", relatedClickHandle);
 saveTitleBtn.on("click", saveTitle);
+$("#saved-cards").on("click", removeTitle);
