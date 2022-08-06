@@ -256,7 +256,6 @@ h5 {
     margin-bottom: 30px;
 }
 
-/*  */
 #four-cards{
     width:50%;
     position: absolute;
@@ -276,8 +275,9 @@ h5 {
 #four-cards h4{
     width:100%;
     text-align: center;
-    
 }
+
+/* saved page */
 
 .saved-card {
     margin-top: 20px;
@@ -304,6 +304,16 @@ h5 {
     justify-content: space-around;
     position: relative;
     
+}
+
+.deleteBtn {
+    background-color: var(--blue);
+}
+
+.saveCards {
+    background-color: var(--darkest);
+    text-align: center;
+    padding-bottom: 10px;
 }
 
 
@@ -346,7 +356,7 @@ h5 {
     }
 
     #poster {
-        padding: 20px;
+        padding: 5px;
         max-width: 100%;  
     }
 
@@ -372,6 +382,11 @@ h5 {
 
     .listbtn {
         max-width: 50px;
+    }
+
+    .select-wrap{
+        width:80%;
+       margin: auto;
     }
 
   }
