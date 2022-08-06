@@ -260,7 +260,8 @@ h5 {
     width:50%;
     position: absolute;
     bottom:10px;
-    left:10px; 
+    /* moves it too far down need to fix VVV */
+    left:70px; 
 }
 
 #one-card{
@@ -325,6 +326,7 @@ h5 {
         position: relative;
         width: 100%;
         padding-top:10%;
+        left:5px; 
     }
     .flex-head{
         flex-direction: column;
@@ -350,6 +352,7 @@ h5 {
     #four-cards{
         width:100%;
         margin: 0 auto;
+        left:80px; 
     }
     .nav-wrapper a{
        font-size: 20px;
@@ -387,6 +390,13 @@ h5 {
     .select-wrap{
         width:80%;
        margin: auto;
+    }
+
+    .related-sec-title{
+        margin:0 auto;
+        padding-right: 100px;
+        border-bottom:1px solid white;
+        width:70%;
     }
 
   }
