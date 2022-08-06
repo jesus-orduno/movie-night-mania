@@ -158,11 +158,14 @@ function displayLiked(titleID){
 
 function removeTitle(event){
     var event = event.target
-    storeSavedTitles = storeSavedTitles.filter((item) => {
-        return item != event.id
-    })
-    localStorage.setItem("titles", JSON.stringify(storeSavedTitles));
-    location.reload();
+    if(event.matches(".deleteBtn")){
+        storeSavedTitles = storeSavedTitles.filter((item) => {
+            return item != event.id
+        })
+        localStorage.setItem("titles", JSON.stringify(storeSavedTitles));
+        location.reload();
+    }
+    
 }
 
 
