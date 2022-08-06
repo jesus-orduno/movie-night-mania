@@ -124,20 +124,49 @@ function displayLiked(titleID){
         url: recentApiCall,
         method: 'GET'
     }).then(function(response){
+        // var container = $("<div>");
+        // container.addClass("col s12 m3");
+        // var cardDivEl = $("<div>");
+        // cardDivEl.addClass("card saved-card");
+        // var imgDivEl = $("<div>");
+        // imgDivEl.addClass("card-image");
+        // var imgEl = $("<img>");
+        // imgEl.addClass("saved-img");
+        // imgEl.attr("src", "./assets/images/loading.gif")
+        
+        // imgDivEl.append(imgEl);
+        // cardDivEl.append(imgDivEl);
+        // container.append(cardDivEl);
+        // $("#saved-cards").append(container);
+        // imgEl.attr("src", response.image);
+        
         var container = $("<div>");
         container.addClass("col s12 m3");
         var cardDivEl = $("<div>");
-        cardDivEl.addClass("card saved-card");
-        var imgDivEl = $("<div>");
-        imgDivEl.addClass("card-image");
+        cardDivEl.addClass("card saveCards");
+        var cardImgEl = $("<div>");
+        cardImgEl.addClass("card-image waves-effect waves-block waves-light");
         var imgEl = $("<img>");
         imgEl.addClass("saved-img");
         imgEl.attr("src", "./assets/images/loading.gif")
-        imgDivEl.append(imgEl);
-        cardDivEl.append(imgDivEl);
+
+        var btnEl = $("<a>");
+        btnEl.addClass("waves-effect waves-light btn deleteBtn");
+        var deleteText = document.createTextNode("Remove");
+
+        var closeEl = $("<i>");
+        closeEl.addClass("material-icons right");
+
+        cardImgEl.append(imgEl);
+        cardDivEl.append(cardImgEl);
         container.append(cardDivEl);
         $("#saved-cards").append(container);
         imgEl.attr("src", response.image);
+
+        cardDivEl.append(btnEl);
+        btnEl.append(deleteText);
+
+
     })
 
 }

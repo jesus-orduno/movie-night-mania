@@ -73,8 +73,13 @@ body {
 
 #logo {
     max-width: 100%;
-    width: 50px;
+    width: 70px;
     margin: 5px;
+    padding-right: 10px;
+}
+
+.app-title {
+    padding-top: 5px;
 }
 
 /* OPTION SECTION STYLES */
@@ -224,6 +229,7 @@ strong{
     justify-content: center;
     background-color: var(--darkest);
     border-radius: 5px;
+    padding: 10px;
 }
 
 #poster {
@@ -244,53 +250,34 @@ strong{
     margin-top: 40px;
 }
 
-/* FOOTER */
-
-footer {
-    margin-top: 100px;
-    padding-bottom: 10px;
-}
-
-.page-footer {
-    background: linear-gradient(var(--darkest), var(--dark));
-}
-
 h5 {
     padding-top: 40px;
     font-size: 30px;
     margin-bottom: 30px;
 }
 
-.paragraph {
-    font-size: 15px;
-    line-height: 2em;
-}
-
-.contributors{
-    line-height: 3em;
-    font-size: 15px;
-}
-
-/*  */
 #four-cards{
     width:50%;
     position: absolute;
     bottom:10px;
-    left:10px;
-    
+    left:70px; 
 }
+
 #one-card{
     height:50%;
+    margin-top: 20px;
 }
 .select-wrap{
     width:50%;
+    margin-left: 60px;
 }
 
 #four-cards h4{
     width:100%;
     text-align: center;
-    
 }
+
+/* saved page */
 
 .saved-card {
     margin-top: 20px;
@@ -319,6 +306,16 @@ h5 {
     
 }
 
+.deleteBtn {
+    background-color: var(--blue);
+}
+
+.saveCards {
+    background-color: var(--darkest);
+    text-align: center;
+    padding-bottom: 10px;
+}
+
 
 /* MOBILE */
 
@@ -340,7 +337,8 @@ h5 {
         margin:auto;
     }
     .select-wrap{
-        width:80%;
+        width:50%;
+        margin-left: 60px;
     }
 }
 
@@ -358,7 +356,7 @@ h5 {
     }
 
     #poster {
-        padding: 20px;
+        padding: 5px;
         max-width: 100%;  
     }
 
@@ -384,6 +382,11 @@ h5 {
 
     .listbtn {
         max-width: 50px;
+    }
+
+    .select-wrap{
+        width:80%;
+       margin: auto;
     }
 
   }
