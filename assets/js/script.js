@@ -51,6 +51,8 @@ function randomTitle(){
     })
     
     $("input").prop("checked", false);
+    
+    
 }   
 
 function imdbCall(imbdID){
@@ -84,6 +86,7 @@ function imdbCall(imbdID){
 })
     $("#one-card").removeClass("hide");
     $("#four-cards").removeClass("hide");
+    
 }
 
 function relatedClickHandle (event){
@@ -98,6 +101,9 @@ function restoreSaved(){
     var storage = JSON.parse(localStorage.getItem("titles"));
     if(storage != null){
        for(i = 0;i < storage.length;i++){
+            if(storage.length > 8){
+                storage.shift();
+            }
             displayLiked(storage[i]);
             storeSavedTitles.push(storage[i]);
        }
@@ -125,7 +131,7 @@ function displayLiked(titleID){
         method: 'GET'
     }).then(function(response){
         var container = $("<div>");
-        container.addClass("col s12 m3");
+        container.addClass("cust-flex");
         var cardDivEl = $("<div>");
         cardDivEl.addClass("card saveCards");
         var cardImgEl = $("<div>");

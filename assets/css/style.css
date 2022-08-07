@@ -291,6 +291,19 @@ h5 {
 .saved-card {
     margin-top: 20px;
 }
+#saved-cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin:0 auto;
+    
+}
+.cust-flex{
+    flex: 0 0 20%;
+    margin: 0 20px;
+   
+}
 
 .related-sec-title{
     margin:0 auto;
@@ -302,6 +315,7 @@ h5 {
     margin:0 auto;
     border-bottom:1px solid white;
     width:70%;
+    flex: 1 0 100%;
 }
 
 .saved-title {
@@ -324,6 +338,7 @@ h5 {
     text-align: center;
     padding-bottom: 10px;
 }
+
 
 
 /* MOBILE */
@@ -360,7 +375,7 @@ h5 {
     #four-cards{
         width:100%;
         margin: 0 auto;
-        left:80px; 
+         
     }
     .nav-wrapper a{
        font-size: 20px;
@@ -379,9 +394,7 @@ h5 {
     }
 
     .recTitle {
-        margin-top: 80px;
-        padding-right: 100px;
-        font-size: 20px;
+        text-align: center;
     }
 
     #submit {
@@ -402,9 +415,29 @@ h5 {
 
     .related-sec-title{
         margin:0 auto;
-        padding-right: 100px;
+        padding-right:50px;
         border-bottom:1px solid white;
-        width:70%;
+        width:100%;
     }
 
-  }
+}
+@media screen and (max-width: 816px){
+    .cust-flex{
+        flex: 0 0 25%;
+        
+    }
+}
+@media screen and (max-width:500px){
+    .cust-flex{
+        flex: 0 0 40%
+
+    }
+
+}
+@media screen and (max-width:416px){
+    #saved-cards{
+        justify-content: center;
+        flex-basis: 60%;
+    }
+}
+  
