@@ -141,7 +141,7 @@ function displayLiked(titleID){
         var cardDivEl = $("<div>");
         cardDivEl.addClass("card saveCards");
         var cardImgEl = $("<div>");
-        cardImgEl.addClass("card-image waves-effect waves-block waves-light");
+        cardImgEl.addClass("card-image waves-block waves-light");
         var imgEl = $("<img>");
         imgEl.addClass("saved-img");
         imgEl.attr("src", "./assets/images/Loading.gif")
