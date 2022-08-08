@@ -1,4 +1,4 @@
-var posterEl = $("#poster");
+var posterEl = $(".poster");
 var titleEl = $("#m-title");
 var actorsEl = $("#m-actors");
 var plotEl = $("#m-plot");
@@ -13,6 +13,8 @@ var savedImgEl = $(".saved-img");
 
 
 function randomTitle(){
+    $("#one-card").removeClass("hide");
+    $("#four-cards").removeClass("hide");
     saveTitleBtn.css("background-color", "#545fa8");
     posterEl.attr("src", "assets/images/Loading.gif");
     relatedImgEl.attr("src", "assets/images/Loading.gif");
@@ -50,7 +52,7 @@ function randomTitle(){
         imdbCall(getRandom.imdb_id);
     })
     
-    $("input").prop("checked", false);
+    
     
     
 }   
@@ -61,31 +63,34 @@ function imdbCall(imbdID){
     $.ajax({
     url: imdbURL,
     method: 'GET',
-}).then(function(response){
-    posterEl.attr("src", response.image);
-    saveTitleBtn.attr("id", response.id);
-    titleEl.text(response.fullTitle);
-    actorsEl.text(response.stars);
-    plotEl.text(response.plot);
-    $("#im-rating").text(response.imDbRating);
-    imDbLink.attr("href", "https://www.imdb.com/title/" + response.id);
-    
-    var storeSimilar = [];
-    console.log(response);
-    for(i = 0; i < response.similars.length;i++){
-        storeSimilar.push(response.similars[i]);
+    }).then(function(response){
+        posterEl.attr("src", response.image);
+        saveTitleBtn.attr("id", response.id);
+        titleEl.text(response.fullTitle);
+        actorsEl.text(response.stars);
+        plotEl.text(response.plot);
+        $("#im-rating").text(response.imDbRating);
+        imDbLink.attr("href", "https://www.imdb.com/title/" + response.id);
         
-    }
-    console.log(storeSimilar);
-    for(i = 0; i < relatedImgEl.length;i++){
-        $(relatedImgEl[i]).attr({src: storeSimilar[i].image, id: storeSimilar[i].id});
+        var storeSimilar = [];
+        console.log(response);
+        for(i = 0; i < response.similars.length;i++){
+            storeSimilar.push(response.similars[i]);
+            
+        }
+        console.log(storeSimilar);
+        for(i = 0; i < relatedImgEl.length;i++){
+            $(relatedImgEl[i]).attr({src: storeSimilar[i].image, id: storeSimilar[i].id});
+            
+        }
         
-    }
+        console.log(response);
+    }).catch(function(response){
+        randomTitle();
+    })
+    $("input").prop("checked", false);
+
     
-    console.log(response);
-})
-    $("#one-card").removeClass("hide");
-    $("#four-cards").removeClass("hide");
     
 }
 
@@ -101,7 +106,7 @@ function restoreSaved(){
     var storage = JSON.parse(localStorage.getItem("titles"));
     if(storage != null){
        for(i = 0;i < storage.length;i++){
-            if(storage.length > 8){
+            if(storage.length > 12){
                 storage.shift();
             }
             displayLiked(storage[i]);
@@ -116,11 +121,12 @@ function saveTitle(event){
 
     var event = event.target;
     saveTitleBtn.css("background-color", "#8d2525");
-    storeSavedTitles.push(event.id);
-    if(storeSavedTitles != null){
-        localStorage.setItem("titles", JSON.stringify(storeSavedTitles));
+    if(!storeSavedTitles.includes(event.id)){
+        storeSavedTitles.push(event.id);
+        if(storeSavedTitles != null){
+            localStorage.setItem("titles", JSON.stringify(storeSavedTitles));
+        }
     }
-
 
 }
 
