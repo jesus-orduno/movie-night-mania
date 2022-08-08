@@ -11,6 +11,7 @@ var submitBtn = $("#submit");
 let storeSavedTitles = [];
 var savedImgEl = $(".saved-img");
 
+// this function will use our first api to give us a list of 250 random titles within the parameters determined by the user inupt, if any. From that list we will get a random title and use the IMDb id as an argument to the following function
 
 function randomTitle(){
     $("#one-card").removeClass("hide");
@@ -57,6 +58,7 @@ function randomTitle(){
     
 }   
 
+// this function will make another ajax call but to the IMDb api to gather the specific details of that random movie generated, which then lets us display the image and neccessary text where it is applied in the DOM
 function imdbCall(imbdID){
     var imdbURL = "https://imdb-api.com/en/API/Title/k_vqj51s28/" + imbdID;
     console.log(imdbURL)
@@ -94,6 +96,7 @@ function imdbCall(imbdID){
     
 }
 
+//this function, triggered by a click on one of the four related movie images, will use the id given to that image (the IMDb id), which will also be used as an argument for the previous function
 function relatedClickHandle (event){
     saveTitleBtn.css("background-color", "#545fa8");
     posterEl.attr("src", "assets/images/Loading.gif");
@@ -102,6 +105,7 @@ function relatedClickHandle (event){
     imdbCall(event.id);
 }
 
+// this function will grab down the local storage, loop through it to pass each iteration as an argument into the displayLiked function--each iteration being the IMDb id 
 function restoreSaved(){
     var storage = JSON.parse(localStorage.getItem("titles"));
     if(storage != null){
@@ -117,6 +121,7 @@ function restoreSaved(){
 
 restoreSaved();
 
+// this function uses the IMDB that was set as the like button's id and stores it into the array that gets set to localStorage. Also we check to make you can only add the same title once with the if statement that only allows the id to be saved if the array doesn't already include it
 function saveTitle(event){
 
     var event = event.target;
@@ -130,6 +135,7 @@ function saveTitle(event){
 
 }
 
+// this function makes another ajax call for each id in the localStorage array when its pulled down and dynamically creates card images for each liked movie and a remove button to help initiate the removeTitle function
 function displayLiked(titleID){
     var recentApiCall = "https://imdb-api.com/en/API/Title/k_vqj51s28/" + titleID;
     $.ajax({
@@ -168,6 +174,7 @@ function displayLiked(titleID){
 
 }
 
+// this function, triggered by clicking the remove button that was also assigned the id of the corresponding liked movie, will filter through the localStorage array and only keep the id's that were not cliked on, resetting the localStorage and then reloading th page to show the update
 function removeTitle(event){
     var event = event.target
     if(event.matches(".deleteBtn")){
