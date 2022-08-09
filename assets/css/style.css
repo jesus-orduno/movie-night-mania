@@ -356,7 +356,7 @@ h5 {
 
 /* MOBILE */
 
-@media screen and (max-width: 992px){
+@media screen and (max-width: 1075px){
     
     #four-cards{
         position: relative;
