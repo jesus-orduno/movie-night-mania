@@ -15,7 +15,7 @@ var savedImgEl = $(".saved-img");
 
 function randomTitle(){
     $("#one-card").removeClass("hide");
-    $("#four-cards").removeClass("hide");
+    
     saveTitleBtn.css("background-color", "#545fa8");
     posterEl.attr("src", "assets/images/Loading.gif");
     relatedImgEl.attr("src", "assets/images/Loading.gif");
@@ -93,7 +93,7 @@ function imdbCall(imbdID){
     $("input").prop("checked", false);
 
     
-    
+    $("#four-cards").removeClass("hide");
 }
 
 //this function, triggered by a click on one of the four related movie images, will use the id given to that image (the IMDb id), which will also be used as an argument for the previous function
