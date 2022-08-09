@@ -17,17 +17,17 @@ Users can see their saved movies any time by clicking the "My List" button on th
 
 This application will allow casual movie watchers to be introduced to movies they may not have otherwise watched. 
 
-## Technologies used
+## Technologies Used
 
-2 APIs were used in this project-
+APIs:
 
-[Watchmode API](https://api.watchmode.com/)
+- [Watchmode API](https://api.watchmode.com/)
 
-[IMDb API](https://imdb-api.com/)
+- [IMDb API](https://imdb-api.com/)
 
-CSS Framework used- 
+CSS Framework:
 
-[Materialize](https://materializecss.com/)
+- [Materialize](https://materializecss.com/)
 
 ## User Story
 
