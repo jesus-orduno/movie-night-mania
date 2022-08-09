@@ -356,11 +356,18 @@ h5 {
 
 /* MOBILE */
 
-@media screen and (max-width: 1075px){
+@media screen and (max-width:1075px){
+    #four-cards{
+        width: 60%;
+        left:5px; 
+    }
+}
+
+@media screen and (max-width: 992px){
     
     #four-cards{
         position: relative;
-        width: 70%;
+        width: 60%;
         left:5px; 
         display: flex;
         flex-wrap: wrap;
