@@ -280,7 +280,7 @@ h5 {
 #four-cards{
     width:50%;
     position: absolute;
-    top: 60%;
+    top:70%;
     /* moves it too far down need to fix VVV */
     left:70px; 
 }
@@ -390,7 +390,7 @@ h5 {
     #four-cards{
         width:75%;
         margin: 0 auto;
-        top:20%;
+        top:60%;
         display: flex;
         flex-wrap: wrap;
         
