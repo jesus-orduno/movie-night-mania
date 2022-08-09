@@ -132,6 +132,13 @@ function saveTitle(event){
             localStorage.setItem("titles", JSON.stringify(storeSavedTitles));
         }
     }
+    else {
+        saveTitleBtn.css("background-color", "#545fa8");
+        storeSavedTitles = storeSavedTitles.filter((item) => {
+            return item != event.id
+        })
+        localStorage.setItem("titles", JSON.stringify(storeSavedTitles));
+    }
 
 }
 
