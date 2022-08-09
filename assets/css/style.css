@@ -31,7 +31,7 @@ body {
 
 .mg, .fg {
     position: absolute;
-    height: 100%;
+    height: 1000px;
     width: 100%;
     object-fit: cover;
     z-index: -1;
@@ -216,16 +216,17 @@ strong{
     width:100%;
 }
 
-.saved-img{
+/* .saved-img{
     cursor: pointer;
-}
+} */
 
-.saved-img:hover{
+/* .saved-img:hover{
     opacity: 0.7;
-}
+} */
 
 .related-img:hover{
     opacity: 0.7;
+    
 }
 
 .addBtn {
@@ -259,9 +260,7 @@ strong{
 
 /* More Movies */
 
-.recTitle {
-    margin-top: 40px;
-}
+
 
 h5 {
     padding-top: 40px;
@@ -272,7 +271,7 @@ h5 {
 #four-cards{
     width:50%;
     position: absolute;
-    bottom:10px;
+    top: 60%;
     /* moves it too far down need to fix VVV */
     left:70px; 
 }
@@ -352,9 +351,11 @@ h5 {
     
     #four-cards{
         position: relative;
-        width: 100%;
-        padding-top:10%;
+        width: 70%;
         left:5px; 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     .flex-head{
         flex-direction: column;
@@ -378,9 +379,17 @@ h5 {
     
   
     #four-cards{
-        width:100%;
+        width:75%;
         margin: 0 auto;
+        top:20%;
+        display: flex;
+        flex-wrap: wrap;
+        
          
+    }
+    .cust-query{
+        margin:0 auto;
+        
     }
     .nav-wrapper a{
        font-size: 20px;
@@ -437,6 +446,12 @@ h5 {
         flex: 0 0 40%
 
     }
+    #four-cards{
+        flex-direction: column;
+        align-items: center;
+    }
+    
+
 
 }
 @media screen and (max-width:416px){
