@@ -20,11 +20,13 @@ This application will allow casual movie watchers to be introduced to movies the
 ## Technologies used
 
 2 APIs were used in this project-
+
 [Watchmode API](https://api.watchmode.com/)
 
 [IMDb API](https://imdb-api.com/)
 
 CSS Framework used- 
+
 [Materialize](https://materializecss.com/)
 
 ## User Story
