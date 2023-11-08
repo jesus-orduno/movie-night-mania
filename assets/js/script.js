@@ -19,7 +19,7 @@ function randomTitle(){
     saveTitleBtn.css("background-color", "#545fa8");
     posterEl.attr("src", "assets/images/Loading.gif");
     relatedImgEl.attr("src", "assets/images/Loading.gif");
-    let titleList = "https://api.watchmode.com/v1/list-titles/?apiKey=xj5lXUo0RCosNUa88eMndZ6X2Lpae8w7BJlwM4zS&types=movie";
+    let titleList = "https://api.watchmode.com/v1/list-titles/?apiKey=xeo8DxXfZkd5yyDTji0rGODvMnP60fcoGyarLSHn&types=movie";
     let storeStreamValues = ["203", "157", "387", "26"];
     for(i = 0;i < streamChoices.length;i++){
         if($(streamChoices[i]).prop("checked")){
@@ -39,8 +39,7 @@ function randomTitle(){
     if(storeGenreValues != 0){
         titleList = titleList + "&genres=" + storeGenreValues.join(",");
     }
-    console.log(storeStreamValues);
-    console.log(titleList);
+    
     
     $.ajax({
         url: titleList,
@@ -50,7 +49,7 @@ function randomTitle(){
         var getRandom = response.titles[Math.floor(Math.random() * response.titles.length)];
         console.log(response);
         console.log(getRandom);
-        imdbCall(getRandom.imdb_id);
+        imdbCall(getRandom.id);
     })
     
     
@@ -59,36 +58,48 @@ function randomTitle(){
 }   
 
 // this function will make another ajax call but to the IMDb api to gather the specific details of that random movie generated, which then lets us display the image and neccessary text where it is applied in the DOM
-function imdbCall(imbdID){
-    var imdbURL = "https://imdb-api.com/en/API/Title/k_vqj51s28/" + imbdID;
+function imdbCall(id){
+    // var imdbURL = "https://imdb-api.com/en/API/Title/k_vqj51s28/" + imbdID;
+    var imdbURL = `https://api.watchmode.com/v1/title/${id}/details/?apiKey=xeo8DxXfZkd5yyDTji0rGODvMnP60fcoGyarLSHn&append_to_response=sources`;
+    // https://api.watchmode.com/v1/title/345534/details/?apiKey=xeo8DxXfZkd5yyDTji0rGODvMnP60fcoGyarLSHn&append_to_response=sources
     console.log(imdbURL)
     $.ajax({
-    url: imdbURL,
-    method: 'GET',
+        url: imdbURL,
+        method: 'GET',
     }).then(function(response){
-        posterEl.attr("src", response.image);
+        console.log('movie details', response);
+        posterEl.attr("src", response.poster);
         saveTitleBtn.attr("id", response.id);
-        titleEl.text(response.fullTitle);
-        actorsEl.text(response.stars);
-        plotEl.text(response.plot);
-        $("#im-rating").text(response.imDbRating);
-        imDbLink.attr("href", "https://www.imdb.com/title/" + response.id);
+        titleEl.text(response.title);
+        // actorsEl.text(response.stars);
+        plotEl.text(response.plot_overview);
+        $("#im-rating").text(response.us_rating);
+        imDbLink.attr("href", response.trailer);
         
         var storeSimilar = [];
         console.log(response);
-        for(i = 0; i < response.similars.length;i++){
-            storeSimilar.push(response.similars[i]);
-            
-        }
-        console.log(storeSimilar);
-        for(i = 0; i < relatedImgEl.length;i++){
-            $(relatedImgEl[i]).attr({src: storeSimilar[i].image, id: storeSimilar[i].id});
+        for(i = 0; i < 4;i++){
+            (function (index) {
+                $.ajax({
+                  url: `https://api.watchmode.com/v1/title/${response.similar_titles[index]}/details/?apiKey=xeo8DxXfZkd5yyDTji0rGODvMnP60fcoGyarLSHn&append_to_response=sources`,
+                  method: 'GET',
+                }).then((resp) => {
+                  console.log(resp.poster, resp.id);
+                  storeSimilar.push({ src: resp.poster, id: resp.id });
+                  console.log(relatedImgEl);
+                  relatedImgEl[index].setAttribute('src', resp.poster);
+                  relatedImgEl[index].setAttribute('id', resp.id);
+                }).catch((error) => {
+                  console.log(error);
+                });
+            })(i);
             
         }
         
-        console.log(response);
-    }).catch(function(response){
-        randomTitle();
+        
+    }).catch(function(error){
+        console.log(error);
+        // randomTitle();
     })
     $("input").prop("checked", false);
 
