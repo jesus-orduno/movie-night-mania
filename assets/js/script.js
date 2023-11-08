@@ -155,7 +155,7 @@ function saveTitle(event){
 
 // this function makes another ajax call for each id in the localStorage array when its pulled down and dynamically creates card images for each liked movie and a remove button to help initiate the removeTitle function
 function displayLiked(titleID){
-    var recentApiCall = "https://imdb-api.com/en/API/Title/k_vqj51s28/" + titleID;
+    var recentApiCall = `https://api.watchmode.com/v1/title/${titleID}/details/?apiKey=xeo8DxXfZkd5yyDTji0rGODvMnP60fcoGyarLSHn&append_to_response=sources`;
     $.ajax({
         url: recentApiCall,
         method: 'GET'
@@ -182,7 +182,7 @@ function displayLiked(titleID){
         cardDivEl.append(cardImgEl);
         container.append(cardDivEl);
         $("#saved-cards").append(container);
-        imgEl.attr("src", response.image);
+        imgEl.attr("src", response.poster);
 
         cardDivEl.append(btnEl);
         btnEl.append(deleteText);
