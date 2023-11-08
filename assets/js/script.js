@@ -87,8 +87,8 @@ function imdbCall(id){
                   console.log(resp.poster, resp.id);
                   storeSimilar.push({ src: resp.poster, id: resp.id });
                   console.log(relatedImgEl);
-                  relatedImgEl[index].setAttribute('src', resp.poster);
-                  relatedImgEl[index].setAttribute('id', resp.id);
+                  $(relatedImgEl[index]).attr({src: resp.poster, id: resp.id});
+                
                 }).catch((error) => {
                   console.log(error);
                 });
